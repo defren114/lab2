@@ -31,6 +31,153 @@
         </div>
     </div>
 </header>
+<style>
+    /* Стили для хедера */
+    .header {
+        background-color: white;
+        padding: 20px 40px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        position: relative;
+        min-height: 180px;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 20px;
+    }
+    
+    .header__left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 2;
+    }
+    
+    .header__logo-link {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .header__logo-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+        border: 2px solid #8B4513;
+    }
+    
+    .header__brand-name {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+    }
+    
+    .header__center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        text-align: center;
+    }
+    
+    .header__banner-img {
+        width: 300px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .header__right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        z-index: 2;
+    }
+    
+    .header__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    .header__icon-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .header__icon-img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+    
+    .header__icon-label {
+        font-size: 14px;
+        color: #666;
+        font-weight: bold;
+    }
+    
+    .header__slogan {
+        font-size: 12px;
+        color: #888;
+        text-align: right;
+        max-width: 200px;
+        line-height: 1.4;
+        margin: 0;
+    }
+    
+    /* Мобильная адаптация */
+    @media (max-width: 768px) {
+        .header {
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            min-height: auto;
+        }
+        
+        .header__left,
+        .header__center,
+        .header__right {
+            position: static;
+            transform: none;
+            margin-bottom: 15px;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .header__left { order: 1; }
+        .header__center { 
+            order: 2; 
+            width: 100%;
+        }
+        .header__right { 
+            order: 3; 
+            align-items: center;
+        }
+        
+        .header__banner-img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            max-height: 120px;
+        }
+        
+        .header__info {
+            align-items: center;
+        }
+        
+        .header__slogan {
+            text-align: center;
+        }
+    }
+</style>
 <main>
     <section></section>
     <section></section>
