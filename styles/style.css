@@ -1,0 +1,808 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.header {
+    background-color: #ffffff;
+    padding: 0 100px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 700px;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    gap: 80px;
+    position: relative;
+}
+
+.header__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 180px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    padding-top: 40px;
+}
+
+.header__logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header__logo-img {
+    width: 124px;
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: 50px;
+}
+
+.header__brand-name {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+    white-space: nowrap;
+    margin-top: 10px;
+}
+
+.header__center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    padding-top: 0;
+}
+
+.header__banner-img {
+    height: 100%;
+    width: auto;
+    max-width: 900px;
+    object-fit: contain;
+    display: block;
+    margin-top: 0;
+}
+
+.header__right {
+    width: 220px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    padding-top: 40px;
+}
+
+.header__right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.header__icon-container {
+    width: 60px;
+    height: 60px;
+    background-color: #2c3e50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+}
+
+.header__icon-container:hover {
+    background-color: #34495e;
+    transform: scale(1.05);
+}
+
+.header__icon-container:focus {
+    outline: 2px solid #2c5530;
+    outline-offset: 2px;
+}
+
+.header__icon-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.header__text-container {
+    text-align: right;
+    max-width: 220px;
+}
+
+.header__icon-label {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #2c3e50;
+    margin: 0 0 20px 0;
+}
+
+.header__slogan {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.navigation {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.navigation__list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.navigation__link {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.navigation__link:hover {
+    background-color: #f0f0f0;
+    color: #2c5530;
+}
+
+.navigation__link:focus {
+    outline: 2px solid #2c5530;
+    outline-offset: 2px;
+}
+
+.features {
+    padding: 80px 100px;
+    background-color: #f8f8f8;
+}
+
+.features__title {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 60px;
+}
+
+.features__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    width: 100%;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature__icon {
+    width: 80px;
+    height: 80px;
+    background-color: #8B4513;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.feature:hover .feature__icon {
+    background-color: #a0522d;
+}
+
+.feature__icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.feature__title {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.feature__description {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.products {
+    padding: 80px 100px;
+    background-color: #ffffff;
+}
+
+.products__title {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 60px;
+}
+
+.products__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.products__row:last-child {
+    margin-bottom: 0;
+}
+
+.product-item {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item__image {
+    flex-shrink: 0;
+    width: 235px;
+    height: 256px;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover .product-item__image {
+    transform: scale(1.03);
+}
+
+.product-item__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-item__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-item__title {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #333;
+    margin: 0 0 15px 0;
+}
+
+.product-item__description {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+}
+
+.product-item__price {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #8B4513;
+    margin-bottom: 20px;
+}
+
+.product-item__button {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    display: inline-block;
+    background-color: #8B4513;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    align-self: flex-start;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.product-item__button:hover {
+    background-color: #a0522d;
+    transform: scale(1.05);
+}
+
+.product-item__button:focus {
+    outline: 2px solid #2c5530;
+    outline-offset: 2px;
+}
+
+.product-item__button:active {
+    transform: scale(0.98);
+}
+
+.coffee-process {
+    padding: 80px 100px;
+    background-color: #f8f8f8;
+}
+
+.coffee-process__title {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 60px;
+}
+
+.coffee-process__content {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.coffee-process__main-image {
+    flex-shrink: 0;
+    width: 463px;
+    height: 409px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.coffee-process__main-image:hover {
+    transform: scale(1.02);
+}
+
+.coffee-process__main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.coffee-process__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.coffee-process__subtitle {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #333;
+    margin: 0 0 25px 0;
+}
+
+.coffee-process__description {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0 0 40px 0;
+}
+
+.coffee-process__logos {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.process-logo-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.process-logo-item:hover {
+    transform: translateX(5px);
+}
+
+.process-logo-item__icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.process-logo-item__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.process-logo-item__text {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.4;
+    margin: 0;
+    flex: 1;
+}
+
+.coffee-types {
+    padding: 80px 100px;
+    background-color: #ffffff;
+}
+
+.coffee-types__title {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 60px;
+}
+
+.coffee-types__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.coffee-type {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.coffee-type:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.coffee-type__image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.coffee-type__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.coffee-type:hover .coffee-type__image img {
+    transform: scale(1.05);
+}
+
+.coffee-type__content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.coffee-type__name {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #333;
+    margin: 0 0 15px 0;
+}
+
+.coffee-type__description {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+}
+
+.coffee-type__price {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #8B4513;
+    margin-top: 10px;
+}
+
+.footer {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    background-color: #cbc1c1;
+    color: #403434;
+    padding: 20px;
+    font-size: 14px;
+    text-align: center;
+    border-top: 1px solid #333;
+    margin-top: auto;
+}
+
+@media (max-width: 1200px) {
+    .header,
+    .features,
+    .products,
+    .coffee-process,
+    .coffee-types {
+        padding: 60px 50px;
+    }
+    
+    .features__grid,
+    .coffee-types__grid {
+        gap: 30px;
+    }
+    
+    .products__row {
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+    
+    .product-item {
+        gap: 25px;
+    }
+    
+    .coffee-process__content {
+        gap: 40px;
+    }
+    
+    .coffee-process__main-image {
+        width: 400px;
+        height: 353px;
+    }
+    
+    .coffee-type__image {
+        height: 250px;
+    }
+}
+
+@media (max-width: 992px) {
+    .features__grid,
+    .coffee-types__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .products__row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .product-item {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .coffee-process__content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .coffee-process__main-image {
+        width: 100%;
+        max-width: 463px;
+        height: 350px;
+    }
+    
+    .coffee-process__info {
+        width: 100%;
+        max-width: 600px;
+    }
+    
+    .header__center {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .header,
+    .features,
+    .products,
+    .coffee-process,
+    .coffee-types {
+        padding: 40px 20px;
+    }
+    
+    .header {
+        flex-direction: column;
+        height: auto;
+        gap: 30px;
+        padding-top: 100px;
+    }
+    
+    .header__left,
+    .header__right {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .header__logo-link {
+        align-items: center;
+    }
+    
+    .header__right-content {
+        align-items: center;
+    }
+    
+    .header__text-container {
+        text-align: center;
+    }
+    
+    .header__banner-img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+    }
+    
+    .features__grid,
+    .coffee-types__grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .product-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .product-item__image {
+        width: 100%;
+        max-width: 235px;
+        margin: 0 auto;
+    }
+    
+    .product-item__button {
+        align-self: stretch;
+        text-align: center;
+    }
+    
+    .coffee-types__title,
+    .features__title,
+    .products__title,
+    .coffee-process__title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    
+    .navigation__list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .coffee-types__title,
+    .features__title,
+    .products__title,
+    .coffee-process__title {
+        font-size: 24px;
+    }
+    
+    .header__brand-name {
+        font-size: 22px;
+    }
+    
+    .header__icon-label {
+        font-size: 20px;
+    }
+    
+    .header__slogan {
+        font-size: 16px;
+    }
+    
+    .product-item__title,
+    .coffee-type__name {
+        font-size: 20px;
+    }
+    
+    .product-item__description,
+    .coffee-type__description {
+        font-size: 14px;
+    }
+    
+    .product-item__price,
+    .coffee-type__price {
+        font-size: 22px;
+    }
+    
+    .coffee-process__main-image {
+        height: 250px;
+    }
+    
+    .navigation {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
