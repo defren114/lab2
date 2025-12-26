@@ -196,6 +196,7 @@ button {
     display: flex;
     gap: 20px;
     list-style: none;
+    transition: all 0.3s ease;
 }
 
 .navigation__link {
@@ -595,6 +596,121 @@ button {
     margin-top: 10px;
 }
 
+.content-grid {
+    padding: 80px 100px;
+    background-color: #f0f0f0;
+}
+
+.content-grid__title {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 60px;
+}
+
+.content-grid__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.content-card {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.content-card__title {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.content-card__text {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.masonry-grid {
+    padding: 80px 100px;
+    background-color: #e8e8e8;
+}
+
+.masonry-grid__title {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 60px;
+}
+
+.masonry-grid__container {
+    column-count: 3;
+    column-gap: 24px;
+}
+
+.masonry-item {
+    display: inline-block;
+    margin: 0 0 1em;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease;
+    break-inside: avoid;
+}
+
+.masonry-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.masonry-item--short {
+    height: 150px;
+}
+
+.masonry-item--tall {
+    height: 250px;
+}
+
+.masonry-item--very-tall {
+    height: 350px;
+}
+
+.masonry-item__title {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.masonry-item__text {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+}
+
 .footer {
     font-family: "Ubuntu", sans-serif;
     font-weight: 400;
@@ -612,7 +728,9 @@ button {
     .features,
     .products,
     .coffee-process,
-    .coffee-types {
+    .coffee-types,
+    .content-grid,
+    .masonry-grid {
         padding: 60px 50px;
     }
     
@@ -641,6 +759,10 @@ button {
     
     .coffee-type__image {
         height: 250px;
+    }
+    
+    .masonry-grid__container {
+        column-count: 3;
     }
 }
 
@@ -682,6 +804,10 @@ button {
         left: 0;
         justify-content: center;
     }
+    
+    .masonry-grid__container {
+        column-count: 2;
+    }
 }
 
 @media (max-width: 768px) {
@@ -689,7 +815,9 @@ button {
     .features,
     .products,
     .coffee-process,
-    .coffee-types {
+    .coffee-types,
+    .content-grid,
+    .masonry-grid {
         padding: 40px 20px;
     }
     
@@ -750,7 +878,9 @@ button {
     .coffee-types__title,
     .features__title,
     .products__title,
-    .coffee-process__title {
+    .coffee-process__title,
+    .content-grid__title,
+    .masonry-grid__title {
         font-size: 28px;
         margin-bottom: 40px;
     }
@@ -760,13 +890,37 @@ button {
         justify-content: center;
         gap: 10px;
     }
+    
+    .masonry-grid__container {
+        column-count: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .navigation__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .navigation {
+        width: 90%;
+        max-width: 300px;
+    }
+    
+    .masonry-grid__container {
+        column-count: 1;
+        column-gap: 15px;
+    }
 }
 
 @media (max-width: 480px) {
     .coffee-types__title,
     .features__title,
     .products__title,
-    .coffee-process__title {
+    .coffee-process__title,
+    .content-grid__title,
+    .masonry-grid__title {
         font-size: 24px;
     }
     
@@ -804,5 +958,31 @@ button {
     .navigation {
         padding: 8px 12px;
         font-size: 14px;
+    }
+    
+    .content-grid__container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 399px) {
+    .content-card,
+    .masonry-item {
+        padding: 1rem;
+    }
+    
+    .content-card__title,
+    .masonry-item__title {
+        font-size: 16px;
+    }
+    
+    .content-card__text,
+    .masonry-item__text {
+        font-size: 12px;
+    }
+    
+    .footer {
+        font-size: 12px;
+        padding: 15px;
     }
 }
