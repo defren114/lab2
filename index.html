@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Рево-кофе</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/mobile.css">
 </head>
 <body>
-    <nav class="navigation" id="navigation">
+    <nav class="navigation">
         <ul class="navigation__list">
             <li><a href="#features" class="navigation__link">Преимущества</a></li>
             <li><a href="#products" class="navigation__link">Коллекция</a></li>
@@ -21,22 +20,53 @@
         </ul>
     </nav>
 
+    <header class="adaptive-header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="#" class="logo">
+                    <img src="assets/icons/LOGO.png" alt="Логотип" width="120" height="40">
+                </a>
+                
+                <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="menu-toggle_line"></span>
+                    <span class="menu-toggle_line"></span>
+                    <span class="menu-toggle_line"></span>
+                </button>
+                
+                <nav class="nav" id="mainNav">
+                    <ul class="nav_list">
+                        <li class="nav_item"><a href="#features" class="nav_link active">Преимущества</a></li>
+                        <li class="nav_item"><a href="#products" class="nav_link">Коллекция</a></li>
+                        <li class="nav_item"><a href="#process" class="nav_link">Процесс</a></li>
+                        <li class="nav_item"><a href="#types" class="nav_link">Сорта</a></li>
+                        <li class="nav_item"><a href="#directions" class="nav_link">Направления</a></li>
+                        <li class="nav_item"><a href="#materials" class="nav_link">Материалы</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="btn btn--primary header_cta">Заказать</button>
+            </div>
+        </div>
+        
+        <div class="nav-overlay" id="navOverlay"></div>
+    </header>
+
     <header class="header" role="banner">
         <div class="header__left">
             <a href="/" class="header__logo-link">
-                <img src="assets/icons/LOGO.png" alt="Логотип Revo Coffee Vietnam" class="header__logo-img" width="124" height="40">
+                <img src="assets/icons/LOGO.png" alt="Логотип" class="header__logo-img" width="124" height="40">
                 <h1 class="header__brand-name">Рево-кофе</h1>
             </a>
         </div>
 
         <div class="header__center">
-            <img src="assets/img/banner.png" alt="Banner Revo Coffee - Лучший кофе Вьетнама" class="header__banner-img" width="900" height="700">
+            <img src="assets/img/banner.png" alt="Banner" class="header__banner-img" width="900" height="700">
         </div>
 
         <div class="header__right">
             <div class="header__right-content">
                 <div class="header__icon-container" tabindex="0">
-                    <img src="assets/icons/shopping-cart-3.png" alt="Иконка корзины покупок" class="header__icon-img" width="18" height="18">
+                    <img src="assets/icons/shopping-cart-3.png" alt="Корзина" class="header__icon-img" width="18" height="18">
                 </div>
                 <div class="header__text-container">
                     <p class="header__icon-label">Кофе Премиум</p>
@@ -49,128 +79,36 @@
     <main>
         <section class="features" id="features">
             <h2 class="features__title">Наши преимущества</h2>
-            
             <div class="features__grid">
-                <div class="feature">
-                    <div class="feature__icon">
-                        <img src="assets/icons/ic.png" alt="Качество" width="40" height="40">
-                    </div>
-                    <h3 class="feature__title">Высокое качество</h3>
-                    <p class="feature__description">Отборные зерна арабики и робусты из лучших регионов</p>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature__icon">
-                        <img src="assets/icons/IC (1).png" alt="Свежесть" width="40" height="40">
-                    </div>
-                    <h3 class="feature__title">Свежая обжарка</h3>
-                    <p class="feature__description">Обжариваем зерна непосредственно перед отправкой для сохранения аромата</p>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature__icon">
-                        <img src="assets/icons/IC (2).png" alt="Доставка" width="40" height="40">
-                    </div>
-                    <h3 class="feature__title">Быстрая доставка</h3>
-                    <p class="feature__description">Доставляем по всей России в кратчайшие сроки</p>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature__icon">
-                        <img src="assets/icons/IC (3).png" alt="Поддержка" width="40" height="40">
-                    </div>
-                    <h3 class="feature__title">Экспертная поддержка</h3>
-                    <p class="feature__description">Поможем выбрать кофе и расскажем о правильном приготовлении</p>
-                </div>
+                <div class="feature"><div class="feature__icon"><img src="assets/icons/ic.png" alt="Качество" width="40" height="40"></div><h3 class="feature__title">Высокое качество</h3><p class="feature__description">Отборные зерна арабики и робусты из лучших регионов</p></div>
+                <div class="feature"><div class="feature__icon"><img src="assets/icons/IC (1).png" alt="Свежесть" width="40" height="40"></div><h3 class="feature__title">Свежая обжарка</h3><p class="feature__description">Обжариваем зерна непосредственно перед отправкой для сохранения аромата</p></div>
+                <div class="feature"><div class="feature__icon"><img src="assets/icons/IC (2).png" alt="Доставка" width="40" height="40"></div><h3 class="feature__title">Быстрая доставка</h3><p class="feature__description">Доставляем по всей России в кратчайшие сроки</p></div>
+                <div class="feature"><div class="feature__icon"><img src="assets/icons/IC (3).png" alt="Поддержка" width="40" height="40"></div><h3 class="feature__title">Экспертная поддержка</h3><p class="feature__description">Поможем выбрать кофе и расскажем о правильном приготовлении</p></div>
             </div>
         </section>
 
         <section class="products" id="products">
             <h2 class="products__title">Наша коллекция кофе</h2>
-            
             <div class="products__row">
-                <div class="product-item">
-                    <div class="product-item__image">
-                        <img src="assets/img/IMAGE.png" alt="Revo Morning" width="235" height="256">
-                    </div>
-                    <div class="product-item__content">
-                        <h3 class="product-item__title">REVO Morning</h3>
-                        <p class="product-item__description">Идеальный кофе для начала дня. Нежный аромат, сбалансированный вкус с нотками горького шоколада и карамели.</p>
-                        <div class="product-item__price">99.000</div>
-                        <button class="product-item__button">Подробнее</button>
-                    </div>
-                </div>
-                
-                <div class="product-item">
-                    <div class="product-item__image">
-                        <img src="assets/img/IMAGE (2).png" alt="Revo Everyday" width="235" height="256">
-                    </div>
-                    <div class="product-item__content">
-                        <h3 class="product-item__title">REVO Everyday</h3>
-                        <p class="product-item__description">Повседневный кофе для истинных ценителей. Насыщенный вкус с долгим послевкусием и фруктовыми нотами.</p>
-                        <div class="product-item__price">85.000</div>
-                        <button class="product-item__button">Подробнее</button>
-                    </div>
-                </div>
+                <div class="product-item"><div class="product-item__image"><img src="assets/img/IMAGE.png" alt="Revo Morning" width="235" height="256"></div><div class="product-item__content"><h3 class="product-item__title">REVO Morning</h3><p class="product-item__description">Идеальный кофе для начала дня. Нежный аромат, сбалансированный вкус с нотками горького шоколада и карамели.</p><div class="product-item__price">99.000</div><button class="product-item__button">Подробнее</button></div></div>
+                <div class="product-item"><div class="product-item__image"><img src="assets/img/IMAGE (2).png" alt="Revo Everyday" width="235" height="256"></div><div class="product-item__content"><h3 class="product-item__title">REVO Everyday</h3><p class="product-item__description">Повседневный кофе для истинных ценителей. Насыщенный вкус с долгим послевкусием и фруктовыми нотами.</p><div class="product-item__price">85.000</div><button class="product-item__button">Подробнее</button></div></div>
             </div>
-            
             <div class="products__row">
-                <div class="product-item">
-                    <div class="product-item__image">
-                        <img src="assets/img/image (1).png" alt="Revo Origin" width="235" height="256">
-                    </div>
-                    <div class="product-item__content">
-                        <h3 class="product-item__title">REVO Origin</h3>
-                        <p class="product-item__description">Моносорта из отдельных регионов Вьетнама. Уникальный терруарный вкус, сохраняющий характер местности.</p>
-                        <div class="product-item__price">139.000</div>
-                        <button class="product-item__button">Подробнее</button>
-                    </div>
-                </div>
-                
-                <div class="product-item">
-                    <div class="product-item__image">
-                        <img src="assets/img/IMAGE (3).png" alt="Revo Đậm Đà" width="235" height="256">
-                    </div>
-                    <div class="product-item__content">
-                        <h3 class="product-item__title">REVO Night</h3>
-                        <p class="product-item__description">Для любителей крепкого кофе. Интенсивный, насыщенный вкус с выраженной горчинкой и пряными нотами.</p>
-                        <div class="product-item__price">75.000</div>
-                        <button class="product-item__button">Подробнее</button>
-                    </div>
-                </div>
+                <div class="product-item"><div class="product-item__image"><img src="assets/img/image (1).png" alt="Revo Origin" width="235" height="256"></div><div class="product-item__content"><h3 class="product-item__title">REVO Origin</h3><p class="product-item__description">Моносорта из отдельных регионов Вьетнама. Уникальный терруарный вкус, сохраняющий характер местности.</p><div class="product-item__price">139.000</div><button class="product-item__button">Подробнее</button></div></div>
+                <div class="product-item"><div class="product-item__image"><img src="assets/img/IMAGE (3).png" alt="Revo Đậm Đà" width="235" height="256"></div><div class="product-item__content"><h3 class="product-item__title">REVO Night</h3><p class="product-item__description">Для любителей крепкого кофе. Интенсивный, насыщенный вкус с выраженной горчинкой и пряными нотами.</p><div class="product-item__price">75.000</div><button class="product-item__button">Подробнее</button></div></div>
             </div>
         </section>
 
         <section class="coffee-process" id="process">
             <h2 class="coffee-process__title">Наш процесс приготовления</h2>
-            
             <div class="coffee-process__content">
-                <div class="coffee-process__main-image">
-                    <img src="assets/img/pr-0018-r.png" alt="Процесс обжарки кофе" width="463" height="409">
-                </div>
-                
+                <div class="coffee-process__main-image"><img src="assets/img/pr-0018-r.png" alt="Процесс обжарки" width="463" height="409"></div>
                 <div class="coffee-process__info">
                     <h3 class="coffee-process__subtitle">Искусство обжарки</h3>
-                    <p class="coffee-process__description">
-                        Каждая партия зерен проходит тщательный контроль качества. 
-                        Наши мастера обжарки следят за температурой и временем, чтобы 
-                        раскрыть уникальные вкусовые характеристики каждого сорта.
-                    </p>
-                    
+                    <p class="coffee-process__description">Каждая партия зерен проходит тщательный контроль качества. Наши мастера обжарки следят за температурой и временем, чтобы раскрыть уникальные вкусовые характеристики каждого сорта.</p>
                     <div class="coffee-process__logos">
-                        <div class="process-logo-item">
-                            <div class="process-logo-item__icon">
-                                <img src="assets/icons/IC_coffee.png" alt="Качество зерен" width="40" height="40">
-                            </div>
-                            <p class="process-logo-item__text">Тщательный отбор и сортировка зерен</p>
-                        </div>
-                        
-                        <div class="process-logo-item">
-                            <div class="process-logo-item__icon">
-                                <img src="assets/icons/IC_Mountain.png" alt="Высота гор" width="40" height="40">
-                            </div>
-                            <p class="process-logo-item__text">Выращивание на высоте 700-800 метров</p>
-                        </div>
+                        <div class="process-logo-item"><div class="process-logo-item__icon"><img src="assets/icons/IC_coffee.png" alt="Качество зерен" width="40" height="40"></div><p class="process-logo-item__text">Тщательный отбор и сортировка зерен</p></div>
+                        <div class="process-logo-item"><div class="process-logo-item__icon"><img src="assets/icons/IC_Mountain.png" alt="Высота гор" width="40" height="40"></div><p class="process-logo-item__text">Выращивание на высоте 700-800 метров</p></div>
                     </div>
                 </div>
             </div>
@@ -178,100 +116,32 @@
 
         <section class="coffee-types" id="types">
             <h2 class="coffee-types__title">Популярные сорта кофе</h2>
-            
             <div class="coffee-types__grid">
-                <div class="coffee-type">
-                    <div class="coffee-type__image">
-                        <img src="assets/img/image (6).png" alt="Арабика" width="349" height="300">
-                    </div>
-                    <div class="coffee-type__content">
-                        <h3 class="coffee-type__name">Арабика</h3>
-                        <p class="coffee-type__description">Нежный вкус с фруктовыми и цветочными нотами, низкое содержание кофеина</p>
-                        <div class="coffee-type__price">129.000</div>
-                    </div>
-                </div>
-                
-                <div class="coffee-type">
-                    <div class="coffee-type__image">
-                        <img src="assets/img/image (7).png" alt="Робуста" width="349" height="300">
-                    </div>
-                    <div class="coffee-type__content">
-                        <h3 class="coffee-type__name">Робуста</h3>
-                        <p class="coffee-type__description">Насыщенный крепкий вкус с шоколадными и ореховыми нотами, высокое содержание кофеина</p>
-                        <div class="coffee-type__price">95.000</div>
-                    </div>
-                </div>
-                
-                <div class="coffee-type">
-                    <div class="coffee-type__image">
-                        <img src="assets/img/image (8).png" alt="Бленд" width="349" height="300">
-                    </div>
-                    <div class="coffee-type__content">
-                        <h3 class="coffee-type__name">Арабика + Робуста</h3>
-                        <p class="coffee-type__description">Идеальный баланс нежности арабики и крепости робусты для сбалансированного вкуса</p>
-                        <div class="coffee-type__price">112.000</div>
-                    </div>
-                </div>
+                <div class="coffee-type"><div class="coffee-type__image"><img src="assets/img/image (6).png" alt="Арабика" width="349" height="300"></div><div class="coffee-type__content"><h3 class="coffee-type__name">Арабика</h3><p class="coffee-type__description">Нежный вкус с фруктовыми и цветочными нотами, низкое содержание кофеина</p><div class="coffee-type__price">129.000</div></div></div>
+                <div class="coffee-type"><div class="coffee-type__image"><img src="assets/img/image (7).png" alt="Робуста" width="349" height="300"></div><div class="coffee-type__content"><h3 class="coffee-type__name">Робуста</h3><p class="coffee-type__description">Насыщенный крепкий вкус с шоколадными и ореховыми нотами, высокое содержание кофеина</p><div class="coffee-type__price">95.000</div></div></div>
+                <div class="coffee-type"><div class="coffee-type__image"><img src="assets/img/image (8).png" alt="Бленд" width="349" height="300"></div><div class="coffee-type__content"><h3 class="coffee-type__name">Арабика + Робуста</h3><p class="coffee-type__description">Идеальный баланс нежности арабики и крепости робусты для сбалансированного вкуса</p><div class="coffee-type__price">112.000</div></div></div>
             </div>
         </section>
 
         <section class="content-grid" id="directions">
             <h2 class="content-grid__title">Направления нашей работы</h2>
             <div class="content-grid__container">
-                <article class="content-card">
-                    <h3 class="content-card__title">Оптовая торговля</h3>
-                    <p class="content-card__text">Поставки кофе для ресторанов, кафе и отелей. Индивидуальные условия для бизнеса.</p>
-                </article>
-                
-                <article class="content-card">
-                    <h3 class="content-card__title">Розничная продажа</h3>
-                    <p class="content-card__text">Продажа кофе в упаковках для домашнего использования. Доставка по всей России.</p>
-                </article>
-                
-                <article class="content-card">
-                    <h3 class="content-card__title">Кофейные семинары</h3>
-                    <p class="content-card__text">Образовательные мероприятия для бариста и любителей кофе. Обучение от профессионалов.</p>
-                </article>
-                
-                <article class="content-card">
-                    <h3 class="content-card__title">Разработка блендов</h3>
-                    <p class="content-card__text">Создание уникальных смесей кофе по индивидуальным заказам клиентов и партнеров.</p>
-                </article>
+                <article class="content-card"><h3 class="content-card__title">Оптовая торговля</h3><p class="content-card__text">Поставки кофе для ресторанов, кафе и отелей. Индивидуальные условия для бизнеса.</p></article>
+                <article class="content-card"><h3 class="content-card__title">Розничная продажа</h3><p class="content-card__text">Продажа кофе в упаковках для домашнего использования. Доставка по всей России.</p></article>
+                <article class="content-card"><h3 class="content-card__title">Кофейные семинары</h3><p class="content-card__text">Образовательные мероприятия для бариста и любителей кофе. Обучение от профессионалов.</p></article>
+                <article class="content-card"><h3 class="content-card__title">Разработка блендов</h3><p class="content-card__text">Создание уникальных смесей кофе по индивидуальным заказам клиентов и партнеров.</p></article>
             </div>
         </section>
 
         <section class="masonry-grid" id="materials">
             <h2 class="masonry-grid__title">Полезные материалы о кофе</h2>
             <div class="masonry-grid__container">
-                <article class="masonry-item masonry-item--short">
-                    <h3 class="masonry-item__title">Как хранить кофе</h3>
-                    <p class="masonry-item__text">Основные правила хранения кофейных зерен для сохранения свежести и аромата.</p>
-                </article>
-                
-                <article class="masonry-item masonry-item--tall">
-                    <h3 class="masonry-item__title">Полное руководство по обжарке</h3>
-                    <p class="masonry-item__text">Подробное описание различных степеней обжарки кофе, от светлой до темной. Как каждая стадия влияет на вкус, кислотность и тело напитка. Рекомендации по выбору обжарки для разных способов приготовления.</p>
-                </article>
-                
-                <article class="masonry-item">
-                    <h3 class="masonry-item__title">Способы заваривания</h3>
-                    <p class="masonry-item__text">Обзор популярных методов приготовления кофе: френч-пресс, аэропресс, капельная кофеварка, эспрессо.</p>
-                </article>
-                
-                <article class="masonry-item masonry-item--very-tall">
-                    <h3 class="masonry-item__title">Энциклопедия сортов кофе</h3>
-                    <p class="masonry-item__text">Исчерпывающий справочник по всем основным сортам кофе, выращиваемым во Вьетнаме. Детальное описание характеристик арабики, робусты и их гибридов. Особенности терруара различных регионов, влияние высоты произрастания на вкусовой профиль. Историческая справка о развитии кофейной индустрии во Вьетнаме и современных тенденциях в селекции.</p>
-                </article>
-
-                <article class="masonry-item masonry-item--short">
-                    <h3 class="masonry-item__title">Кофе и здоровье</h3>
-                    <p class="masonry-item__text">Научные исследования о влиянии кофеина на организм.</p>
-                </article>
-
-                <article class="masonry-item">
-                    <h3 class="masonry-item__title">Выбор кофемолки</h3>
-                    <p class="masonry-item__text">Как выбрать правильную кофемолку для дома. Сравнение ножевых и жерновых моделей.</p>
-                </article>
+                <article class="masonry-item masonry-item--short"><h3 class="masonry-item__title">Как хранить кофе</h3><p class="masonry-item__text">Основные правила хранения кофейных зерен для сохранения свежести и аромата.</p></article>
+                <article class="masonry-item masonry-item--tall"><h3 class="masonry-item__title">Полное руководство по обжарке</h3><p class="masonry-item__text">Подробное описание различных степеней обжарки кофе, от светлой до темной. Как каждая стадия влияет на вкус, кислотность и тело напитка. Рекомендации по выбору обжарки для разных способов приготовления.</p></article>
+                <article class="masonry-item"><h3 class="masonry-item__title">Способы заваривания</h3><p class="masonry-item__text">Обзор популярных методов приготовления кофе: френч-пресс, аэропресс, капельная кофеварка, эспрессо.</p></article>
+                <article class="masonry-item masonry-item--very-tall"><h3 class="masonry-item__title">Энциклопедия сортов кофе</h3><p class="masonry-item__text">Исчерпывающий справочник по всем основным сортам кофе, выращиваемым во Вьетнаме. Детальное описание характеристик арабики, робусты и их гибридов. Особенности терруара различных регионов, влияние высоты произрастания на вкусовой профиль. Историческая справка о развитии кофейной индустрии во Вьетнаме и современных тенденциях в селекции.</p></article>
+                <article class="masonry-item masonry-item--short"><h3 class="masonry-item__title">Кофе и здоровье</h3><p class="masonry-item__text">Научные исследования о влиянии кофеина на организм.</p></article>
+                <article class="masonry-item"><h3 class="masonry-item__title">Выбор кофемолки</h3><p class="masonry-item__text">Как выбрать правильную кофемолку для дома. Сравнение ножевых и жерновых моделей.</p></article>
             </div>
         </section>
     </main>
@@ -280,35 +150,8 @@
         <p>© Рево-кофе – 2025</p>
     </footer>
 
-    <script>
-        document.querySelectorAll('.navigation__link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+    <button class="scroll-top" id="scrollTop" aria-label="Наверх">↑</button>
 
-        document.querySelectorAll('.product-item__button').forEach(button => {
-            button.addEventListener('mousedown', function() {
-                this.style.transform = 'scale(0.95)';
-            });
-            
-            button.addEventListener('mouseup', function() {
-                this.style.transform = 'scale(1)';
-            });
-            
-            button.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1)';
-            });
-        });
-    </script>
+    <script src="scripts/menu.js"></script>
 </body>
 </html>
